@@ -8,11 +8,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
+import game.Level;
 import gfx.Assets;
 import gfx.Text;
 import input.MouseManager;
 import main.Window;
-import sokoban.Level;
 import ui.Button;
 import ui.Click;
 
@@ -80,6 +80,12 @@ public class LevelSelectorState extends State{
 		}
 		
 	}
+	
+	public void reload() {
+		for(int i = 0; i < levels.length; i++)
+			levels[i] = loadLevel("/levels/"+i+".txt");
+	}
+	
 	private Level loadLevel(String path){
 		
 		String file = loadFileAsString(path);

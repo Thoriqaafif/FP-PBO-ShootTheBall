@@ -1,4 +1,4 @@
-package sokoban;
+package game;
 
 import java.awt.Graphics;
 
@@ -199,13 +199,6 @@ public class Level {
 	public void update(){
 		time += System.currentTimeMillis() - lastTime;
 		lastTime = System.currentTimeMillis();
-		if(Window.character==0) {
-			texture = Assets.ronaldoFront;
-		}else if (Window.character==1){
-			texture = Assets.messiFront;
-		}else if (Window.character==2){
-			texture = Assets.mbappeFront;
-		}
 		
 		if(KeyBoard.UP && time > DELAY){
 			move(-1, 0);
@@ -217,7 +210,7 @@ public class Level {
 				texture = Assets.mbappeBack;
 			}
 		}
-		if(KeyBoard.LEFT && time > DELAY){
+		else if(KeyBoard.LEFT && time > DELAY){
 			move(0, -1);
 			if(Window.character==0) {
 				texture = Assets.ronaldoLeft;
@@ -227,7 +220,7 @@ public class Level {
 				texture = Assets.mbappeLeft;
 			}
 		}
-		if(KeyBoard.DOWN && time > DELAY){
+		else if(KeyBoard.DOWN && time > DELAY){
 			move(1, 0);
 			if(Window.character==0) {
 				texture = Assets.ronaldoFront;
@@ -237,7 +230,7 @@ public class Level {
 				texture = Assets.mbappeFront;
 			}
 		}
-		if(KeyBoard.RIGHT && time > DELAY){
+		else if(KeyBoard.RIGHT && time > DELAY){
 			move(0, 1);
 			if(Window.character==0) {
 				texture = Assets.ronaldoRight;
@@ -363,4 +356,9 @@ public class Level {
 	
 	public boolean isSolved(){return solved;}
 	public void setSolved(boolean bool){solved = bool;}
+	public void setTexture() {
+		if(true) {
+			texture = Assets.mbappeFront;
+		}
+	}
 }

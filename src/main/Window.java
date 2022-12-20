@@ -7,10 +7,10 @@ import java.awt.image.BufferStrategy;
 
 import javax.swing.JFrame;
 
+import game.Level;
 import gfx.Assets;
 import input.KeyBoard;
 import input.MouseManager;
-import sokoban.Level;
 import states.ChooseChar;
 import states.GameState;
 import states.LevelSelectorState;
@@ -20,7 +20,7 @@ import states.State;
 
 public class Window extends JFrame implements Runnable{
 	
-	public static final int WIDTH = 1200, HEIGHT = 800;
+	public static final int WIDTH = 900, HEIGHT = 600;
 	private Canvas canvas;
 	private Thread thread;
 	private boolean running = false;
@@ -118,10 +118,11 @@ public class Window extends JFrame implements Runnable{
 	{
 		Assets.init();
 		menuState = new MenuState(this);
+		ChooseCharacter = new ChooseChar(this);
 		gameState = new GameState(this);
 		loadingState = new LoadingState(this);
 		levelSelectorState = new LevelSelectorState(this);
-		ChooseCharacter = new ChooseChar(this);
+		//ChooseCharacter = new ChooseChar(this);
 		State.currentState = loadingState;
 	}
 	

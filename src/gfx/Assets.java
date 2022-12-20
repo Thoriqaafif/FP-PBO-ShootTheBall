@@ -9,7 +9,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-import sokoban.Level;
+import game.Level;
 
 public class Assets {
 	

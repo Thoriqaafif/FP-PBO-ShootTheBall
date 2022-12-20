@@ -2,6 +2,7 @@ package states;
 
 import java.awt.Graphics;
 
+import game.Level;
 import gfx.Assets;
 import main.Window;
 import ui.Button;
@@ -9,6 +10,7 @@ import ui.Click;
 
 public class ChooseChar extends State {
 	Button bappe,messi,ronaldo,back;
+	private Level level;
 	
 	public ChooseChar(Window window) {
 		// TODO Auto-generated constructor stub
@@ -16,6 +18,7 @@ public class ChooseChar extends State {
 		ronaldo = new Button("Ronaldo",Window.WIDTH/4,Window.HEIGHT/2,new Click() {
 			public void onClick() {
 				Window.character=0;
+				((LevelSelectorState)window.getLevelSelectorState()).reload();
 				ronaldo.setString("SELECTED");
 				messi.setString("Messi");
 				bappe.setString("Mbappe");
@@ -24,6 +27,7 @@ public class ChooseChar extends State {
 		messi = new Button("Messi",Window.WIDTH/2,Window.HEIGHT/2,new Click() {
 			public void onClick() {
 				Window.character=1;
+				((LevelSelectorState)window.getLevelSelectorState()).reload();
 				messi.setString("SELECTED");
 				ronaldo.setString("Ronaldo");
 				bappe.setString("Mbappe");
@@ -32,6 +36,7 @@ public class ChooseChar extends State {
 		bappe = new Button("Mbappe",Window.WIDTH*3/4,Window.HEIGHT/2,new Click() {
 			public void onClick() {
 				Window.character=2;
+				((LevelSelectorState)window.getLevelSelectorState()).reload();
 				bappe.setString("SELECTED");
 				messi.setString("Messi");
 				ronaldo.setString("Ronaldo");

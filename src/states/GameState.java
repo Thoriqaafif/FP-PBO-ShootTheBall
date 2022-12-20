@@ -2,8 +2,8 @@ package states;
 
 import java.awt.Graphics;
 
+import game.Level;
 import main.Window;
-import sokoban.Level;
 
 public class GameState extends State{
 	
