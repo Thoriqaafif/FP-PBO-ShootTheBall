@@ -55,24 +55,24 @@ public class LevelSelectorState extends State{
 				Rectangle bounds = new Rectangle(xOffset + j*DOUBLETILESIZE,
 						yOffset + i*DOUBLETILESIZE, DOUBLETILESIZE, DOUBLETILESIZE);
 				if(bounds.contains(MouseManager.x, MouseManager.y)){
-					if(MouseManager.left && levels[counter-1].isSolved()){
+					if(MouseManager.left){
 						((GameState)window.getGameState()).setLevel(levels[counter-1]);
 						State.currentState = window.getGameState();
 					}
 					g.drawImage(Assets.outline2, bounds.x, bounds.y, null);
 					if(levels[counter-1].isSolved())
 						Text.drawString(g, counter+"", xOffset + DOUBLETILESIZE/2 + j*DOUBLETILESIZE,
-							yOffset + DOUBLETILESIZE/2 + i*DOUBLETILESIZE, true, Color.RED);
+							yOffset + DOUBLETILESIZE/2 + i*DOUBLETILESIZE, true, Color.GREEN);
 					else
-						Text.drawString(g,"?", xOffset + DOUBLETILESIZE/2 + j*DOUBLETILESIZE,
-								yOffset + DOUBLETILESIZE/2 + i*DOUBLETILESIZE, true, Color.RED);
+						Text.drawString(g,String.valueOf(6*i+j+1), xOffset + DOUBLETILESIZE/2 + j*DOUBLETILESIZE,
+								yOffset + DOUBLETILESIZE/2 + i*DOUBLETILESIZE, true, Color.GREEN);
 				}else{
 					g.drawImage(Assets.outline, bounds.x, bounds.y, null);
 					if(levels[counter-1].isSolved())
 						Text.drawString(g, counter+"", xOffset + DOUBLETILESIZE/2 + j*DOUBLETILESIZE,
-							yOffset + DOUBLETILESIZE/2 + i*DOUBLETILESIZE, true, Color.GREEN);
+							yOffset + DOUBLETILESIZE/2 + i*DOUBLETILESIZE, true, Color.BLUE);
 					else
-						Text.drawString(g,"?", xOffset + DOUBLETILESIZE/2 + j*DOUBLETILESIZE,
+						Text.drawString(g,String.valueOf(6*i+j+1), xOffset + DOUBLETILESIZE/2 + j*DOUBLETILESIZE,
 								yOffset + DOUBLETILESIZE/2 + i*DOUBLETILESIZE, true, Color.BLUE);
 				}
 				counter ++;

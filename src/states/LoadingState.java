@@ -9,7 +9,7 @@ import main.Window;
 
 public class LoadingState extends State{
 	
-	private final String NAME = "DEVELOPED BY JOSHUA H..";
+	private final String NAME ="BUKAN BANG JAGO TEAM ....";
 	private String text = "";
 	private int index = 0;
 	private long time, lastTime;

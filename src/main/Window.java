@@ -11,6 +11,7 @@ import gfx.Assets;
 import input.KeyBoard;
 import input.MouseManager;
 import sokoban.Level;
+import states.ChooseChar;
 import states.GameState;
 import states.LevelSelectorState;
 import states.LoadingState;
@@ -19,7 +20,7 @@ import states.State;
 
 public class Window extends JFrame implements Runnable{
 	
-	public static final int WIDTH = 800, HEIGHT = 600;
+	public static final int WIDTH = 1200, HEIGHT = 800;
 	private Canvas canvas;
 	private Thread thread;
 	private boolean running = false;
@@ -35,16 +36,18 @@ public class Window extends JFrame implements Runnable{
 	private LevelSelectorState levelSelectorState;
 	private MenuState menuState;
 	private LoadingState loadingState;
-	
+	private ChooseChar ChooseCharacter;
 	private KeyBoard keyBoard;
 	private MouseManager mouseManager;
 	
+	public static int character;
+	
 	public Window()
 	{
-		setTitle("Sokoban Game");
+		setTitle("Shout On Your Goal");
 		setSize(WIDTH, HEIGHT);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setResizable(false);
+		//setResizable(false);
 		setLocationRelativeTo(null);
 		
 		canvas = new Canvas();
@@ -118,6 +121,7 @@ public class Window extends JFrame implements Runnable{
 		gameState = new GameState(this);
 		loadingState = new LoadingState(this);
 		levelSelectorState = new LevelSelectorState(this);
+		ChooseCharacter = new ChooseChar(this);
 		State.currentState = loadingState;
 	}
 	
@@ -179,6 +183,10 @@ public class Window extends JFrame implements Runnable{
 	public State getLevelSelectorState(){
 		return levelSelectorState;
 	}
+	public State getChooseCharacterState(){
+		return ChooseCharacter;
+	}
+	
 	public State getMenuState(){
 		return menuState;
 	}

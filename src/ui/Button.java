@@ -31,20 +31,28 @@ public class Button{
 	public void update(){		
 		if(bounds != null && bounds.contains(MouseManager.x, MouseManager.y)){
 			hovering = true;
-			if(MouseManager.left)
+			if(MouseManager.left) {
 				click.onClick();
+				
+				MouseManager.left=false;
+			}
+				
 		}else
 			hovering = false;
 	}
-	
+	//untuk mengatur font menu 
 	public void render(Graphics g){
 		g.setFont(font);
 		fm = g.getFontMetrics();
-		if(hovering)
+		if(hovering || this.text=="SELECTED")
 			Text.drawString(g, text, x, y, true, Color.RED);
 		else
 			Text.drawString(g, text, x, y, true, Color.BLUE);
 		bounds = new Rectangle(x - fm.stringWidth(text)/2, y - fm.getHeight()/2, fm.stringWidth(text), fm.getHeight());
+	}
+	
+	public void setString(String text) {
+		this.text=text;
 	}
 	
 }

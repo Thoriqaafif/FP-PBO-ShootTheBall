@@ -13,9 +13,11 @@ import sokoban.Level;
 
 public class Assets {
 	
-	public static Image playerLeft, playerBack, playerRight, PlayerFront;
+	public static Image ronaldoLeft, ronaldoBack, ronaldoFront,ronaldoRight, ronaldoFrontBig;
+	public static Image messiLeft, messiBack, messiFront,messiRight, messiFrontBig;
+	public static Image mbappeLeft,mbappeBack, mbappeFront,mbappeRight, mbappeFrontBig;
 	
-	public static Image floor, floor2, wall, boxOn, boxOff, spot, outline, outline2;
+	public static Image floor, floor2, wall,cone, Goal, ball, gawang, outline, outline2,red,blue,floor3,black;
 	
 	public static Font font48;
 	public static Font font30;
@@ -23,19 +25,37 @@ public class Assets {
 	
 	public static void init()
 	{
-		playerLeft = loadImage("/player/left.png").getScaledInstance(Level.TILESIZE, Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
-		playerBack = loadImage("/player/back.png").getScaledInstance(Level.TILESIZE, Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
-		PlayerFront = loadImage("/player/front.png").getScaledInstance(Level.TILESIZE, Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
-		playerRight = loadImage("/player/right.png").getScaledInstance(Level.TILESIZE, Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
+		ronaldoLeft = loadImage("/player/Ronaldo/r_left.png").getScaledInstance(Level.TILESIZE, Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
+		ronaldoBack = loadImage("/player/Ronaldo/r_back.png").getScaledInstance(Level.TILESIZE, Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
+		ronaldoFront = loadImage("/player/Ronaldo/r_front.png").getScaledInstance(Level.TILESIZE, Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
+		ronaldoRight = loadImage("/player/Ronaldo/r_right.png").getScaledInstance(Level.TILESIZE, Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
+		ronaldoFrontBig = loadImage("/player/Ronaldo/r_front.png").getScaledInstance(4*Level.TILESIZE, 4*Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
 		
-		floor = loadImage("/blocks/ground.png").getScaledInstance(Level.TILESIZE, Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
-		floor2 = loadImage("/blocks/ground2.png").getScaledInstance(Level.TILESIZE, Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
-		wall = loadImage("/blocks/redBrick.png").getScaledInstance(Level.TILESIZE, Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
-		boxOn = loadImage("/blocks/boxOn.png").getScaledInstance(Level.TILESIZE, Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
-		boxOff = loadImage("/blocks/boxOff.png").getScaledInstance(Level.TILESIZE, Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
-		spot = loadImage("/blocks/spot.png").getScaledInstance(Level.TILESIZE, Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
+		messiLeft = loadImage("/player/messi/left.png").getScaledInstance(Level.TILESIZE, Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
+		messiBack = loadImage("/player/messi/back.png").getScaledInstance(Level.TILESIZE, Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
+		messiFront = loadImage("/player/messi/front.png").getScaledInstance(Level.TILESIZE, Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
+		messiRight = loadImage("/player/messi/right.png").getScaledInstance(Level.TILESIZE, Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
+		messiFrontBig = loadImage("/player/messi/front.png").getScaledInstance(4*Level.TILESIZE, 4*Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
+		
+		mbappeLeft = loadImage("/player/mbappe/m_left.png").getScaledInstance(Level.TILESIZE, Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
+		mbappeBack = loadImage("/player/mbappe/m_back.png").getScaledInstance(Level.TILESIZE, Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
+		mbappeFront = loadImage("/player/mbappe/m_front.png").getScaledInstance(Level.TILESIZE, Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
+		mbappeRight = loadImage("/player/mbappe/m_right.png").getScaledInstance(Level.TILESIZE, Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
+		mbappeFrontBig = loadImage("/player/mbappe/m_front.png").getScaledInstance(4*Level.TILESIZE, 4*Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
+		
+		floor = loadImage("/blocks/grass.png").getScaledInstance(Level.TILESIZE, Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
+		floor2 = loadImage("/blocks/ground.png").getScaledInstance(Level.TILESIZE, Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
+		cone = loadImage("/blocks/cone.png").getScaledInstance(Level.TILESIZE, Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
+		Goal = loadImage("/blocks/GOAL.png").getScaledInstance(Level.TILESIZE, Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
+		ball = loadImage("/blocks/ball.png").getScaledInstance(Level.TILESIZE, Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
+		gawang = loadImage("/blocks/gawang.png").getScaledInstance(Level.TILESIZE, Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
 		outline = loadImage("/blocks/outline.png").getScaledInstance(64, 64, BufferedImage.SCALE_DEFAULT);
 		outline2 = loadImage("/blocks/outline2.png").getScaledInstance(64, 64, BufferedImage.SCALE_DEFAULT);
+		red = loadImage("/blocks/red.png").getScaledInstance(Level.TILESIZE, Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
+		wall = loadImage("/blocks/grass.png").getScaledInstance(Level.TILESIZE, Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
+		blue = loadImage("/blocks/blue.png").getScaledInstance(Level.TILESIZE, Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
+		floor3 = loadImage("/blocks/ground.png").getScaledInstance(Level.TILESIZE, Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
+		black = loadImage("/blocks/black.png").getScaledInstance(Level.TILESIZE, Level.TILESIZE, BufferedImage.SCALE_DEFAULT);
 		
 		font48 = loadFont("res/fonts/square.ttf", 48);
 		font22 = loadFont("res/fonts/square.ttf", 22);

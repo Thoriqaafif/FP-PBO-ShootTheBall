@@ -13,10 +13,12 @@ public abstract class State {
 	public State(Window window){
 		this.window = window;
 	}
+	public void sfxInit() {};
 	
 	public abstract void update();
 	
 	public abstract void render(Graphics g);
+
 	
 	
 }
